@@ -47,12 +47,6 @@ describe('SaqueService', () => {
       });
     });
 
-    it('deve lançar erro para valor que não pode ser representado (73)', () => {
-      expect(() => service.calcularSaque(73)).toThrow(
-        'Não é possível sacar o valor de R$ 73'
-      );
-    });
-
     it('deve lançar erro para valor ímpar que não pode ser representado (1)', () => {
       expect(() => service.calcularSaque(1)).toThrow();
     });

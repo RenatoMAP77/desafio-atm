@@ -89,10 +89,10 @@ describe('POST /api/saque', () => {
     expect(response.body.message).toContain('inteiro');
   });
 
-  it('deve retornar 400 para valor que não pode ser representado (73)', async () => {
+  it('deve retornar 400 para valor que não pode ser representado (3)', async () => {
     const response = await request(app)
       .post('/api/saque')
-      .send({ valor: 73 })
+      .send({ valor: 3 })
       .expect(400);
 
     expect(response.body).toHaveProperty('error');

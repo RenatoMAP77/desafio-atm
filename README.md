@@ -25,14 +25,21 @@ Esta API foi desenvolvida como parte do desafio técnico da Morada.ai. O objetiv
 
 ### Algoritmo Utilizado
 
-A solução utiliza o **algoritmo guloso** para distribuição de cédulas:
+A solução utiliza **Programação Dinâmica** para garantir a distribuição ótima de cédulas:
 
-1. Ordena as cédulas da maior para a menor
-2. Para cada cédula, calcula quantas unidades cabem no valor restante
-3. Subtrai o valor já distribuído
-4. Repete até distribuir todo o valor ou identificar impossibilidade
+1. **Cria uma tabela de programação dinâmica** onde `dp[i]` representa a quantidade mínima de cédulas necessárias para formar o valor `i`
+2. **Preenche a tabela** testando todas as cédulas disponíveis para cada valor de 1 até o valor desejado
+3. **Escolhe a melhor solução** comparando todas as combinações possíveis
+4. **Reconstrói a solução** rastreando quais cédulas foram usadas
 
-**Complexidade:** O(n) onde n é a quantidade de tipos de cédulas (constante = 6)
+**Complexidade:** O(n).
+
+#### Valores Impossíveis
+
+Com as cédulas [100, 50, 20, 10, 5, 2], apenas **dois valores** são impossíveis:
+- **1**: Menor que a menor cédula disponível
+- **3**: Não pode ser formado com nenhuma combinação
+
 
 ## 🚀 Tecnologias Utilizadas
 
